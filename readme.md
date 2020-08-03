@@ -9,7 +9,7 @@ THe other intent is that all code should be lua compatable code, so the original
 ## Usage
 
 ```
-lua compile.lua [source folder] -o [output folder] [conditionals] 
+lua targets.lua [source folder] -o [output folder] [conditionals] 
 ```
 
 ## Getting Started
