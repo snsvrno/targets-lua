@@ -40,6 +40,33 @@ print("number passed assertion")
 --]]
 ```
 
-Now you can run a debug and test version by running `lua compile.lua file.lua DEBUG TEST` or you can 'compile' it to a new file with `lua compile.lua file.lua -o bin\ DEBUG TEST`
+Now you get a debug and test version by running `lua compile.lua file.lua -o bin\ DEBUG TEST` 
 
-Compile.lua will process all local require files with the same environmental flags as the first file run when running an individual file.
+```lua
+local number = 0
+
+print(number)
+
+
+for i=1,#10 do
+    number = number + i
+
+    print(number)
+end
+
+assert(number == 55)
+print("number passed assertion")
+
+```
+
+Or just get the release version by running `lua target.lua file.lua -o bin\`
+
+```lua
+local number = 0
+
+for i=1,#10 do
+    number = number + i
+end
+```
+
+or you can run it directly from the command line with `lua target.lua file.lua DEBUG`
