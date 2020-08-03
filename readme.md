@@ -4,12 +4,12 @@ A simple example of a preprocessing transpiler that uses lua compatable files to
 
 The original intent of this is to be able to have `debug` and `assert` sections in code to create a "debug target" that can be ran with extra information and checks. Then a "release target" can be made that will strip these sections out.
 
-THe other intent is that all code should be lua compatable code, so the original source can be run and this `targets.lua` can be completely ignored if desired.
+The other intent is that all code should be lua compatable code, so the original source can be run and this `targets.lua` can be completely ignored if desired.
 
 ## Usage
 
 ```
-lua targets.lua [source folder] -o [output folder] [conditionals] 
+lua targets.lua [source folder/file] -o [output folder] [conditionals] 
 ```
 
 ## Getting Started
@@ -47,7 +47,6 @@ local number = 0
 
 print(number)
 
-
 for i=1,#10 do
     number = number + i
 
@@ -63,6 +62,8 @@ Or just get the release version by running `lua target.lua file.lua -o bin\`
 
 ```lua
 local number = 0
+
+print("running in normal mode")
 
 for i=1,#10 do
     number = number + i
